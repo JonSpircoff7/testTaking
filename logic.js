@@ -2,38 +2,32 @@
 // currentQuestion
 let currentQuestion = "thisisconfusing";
 // time
-let time = 69;
 // timerId
 // variables to reference DOM elements
 let questionsEl = document.getElementById("questions");
 let countDown = document.getElementById("count");
 let startClock = $("#start-button");
+let startScreen = document.querySelector("#start-screen");
+console.log(startScreen);
 
 /* FUNCTION TO START THE QUIZ */
 function startQuiz() {
   // hide start screen
-  // un-hide questions section
-  $("#startClock").click(function () {
-    var counter = 5;
-    setInterval(function () {
-      counter--;
-      if (counter >= 0) {
-        span = document.getElementById("count");
-        span.innerHTML = counter;
-      }
-      if (counter === 0) {
-        alert("sorry, out of time");
-        clearInterval(counter);
-      }
-    }, 1000);
-  });
-
-  // start timer
-
-  // show starting time
-
-  //   getQuestion();
+  startScreen.setAttribute("class", "hide");
+  questionsEl.removeAttribute("class", "hide");
+  for (var i = 0; i < questions.length; i++) {
+    if (i < questions.length) {
+      console.log(questions);
+      questionsEl.appendChild("li");
+    }
+  }
 }
+// un-hide questions section
+// start timer
+
+// show starting time
+
+//   getQuestion();
 
 /* FUNCTION TO GET/SHOW EACH QUESTION */
 function getQuestions() {
@@ -97,4 +91,5 @@ function saveHighscore() {
 startClock.on("click", function click() {
   startQuiz();
 });
+
 // user clicks on element containing choices

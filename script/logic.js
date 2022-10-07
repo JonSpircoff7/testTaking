@@ -56,7 +56,7 @@ function questionClick(event) {
   // check if we've run out of questions
   // if so, end the quiz
   // else, get the next question
-}
+}z
 
 /* FUNCTION TO END THE QUIZ */
 function quizEnd() {
