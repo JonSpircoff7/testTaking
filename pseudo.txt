@@ -1,0 +1,25 @@
+Checklist:
+    1. Start page
+        // -Start button(Function)
+    2. Time Function
+        -When user clicks start button then clock will run down from specified #.
+        -If timer hits 0 then quiz ends. Send user to input page with current score
+        -If timer is greater than 0 and user finished- Send user to input page with current score
+    3. Questions and Answers
+        -Random question generated showing Qestion with Answers(buttons)    
+        -If button is chosen- Check if answer is correct
+        -If answer is correct- "You're right!"
+        -If answer is wrong- "Incorrect answer"
+        -User is able to click next button to go to next random question. 
+        -Finish/submit button to finish quiz
+    4. Input page to enter in information
+        -SHOW SCORE AND TIME TAKEN TO TAKE TEST
+        -Input that takes in an input and stores users input to localStorage onSubmit
+        -Next button to go to highscores page or return to main menu button
+    5. Highscores page - NAV LINK
+        -Show user information with name from input and score recorded.
+        -List of scores that are sorted from greatest value to lowest
+        -Restart button to restart quiz
+        -Clear data button that allows user to reset highscores
+
+   

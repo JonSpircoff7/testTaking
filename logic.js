@@ -1,22 +1,35 @@
 // variables to keep track of quiz state
-let startScreen = document.getElementById("start-screen");
-currentQuestion = questions;
-console.log(currentQuestion);
 // currentQuestion
-var timeCount; // time
+let currentQuestion = "thisisconfusing";
+// time
+let time = 69;
 // timerId
-
 // variables to reference DOM elements
-var questionsEl = document.getElementById("questions");
-let startBtn = document.getElementById("start-button");
-console.log(startBtn);
+let questionsEl = document.getElementById("questions");
+let countDown = document.getElementById("count");
+let startClock = $("#start-button");
+
 /* FUNCTION TO START THE QUIZ */
 function startQuiz() {
-
   // hide start screen
   // un-hide questions section
+  $("#startClock").click(function () {
+    var counter = 5;
+    setInterval(function () {
+      counter--;
+      if (counter >= 0) {
+        span = document.getElementById("count");
+        span.innerHTML = counter;
+      }
+      if (counter === 0) {
+        alert("sorry, out of time");
+        clearInterval(counter);
+      }
+    }, 1000);
+  });
 
-  // start time
+  // start timer
+
   // show starting time
 
   //   getQuestion();
@@ -68,9 +81,6 @@ function quizEnd() {
 
 /* FUNCTION FOR UPDATING THE TIME */
 
-// update time
-// check if user ran out of time
-
 function saveHighscore() {
   // get value of input box - for initials
   // make sure value wasn't empty
@@ -84,7 +94,7 @@ function saveHighscore() {
 // user clicks button to submit initials
 
 // user clicks button to start quiz
-startBtn.addEventListener("click", function () {
+startClock.on("click", function click() {
   startQuiz();
 });
 // user clicks on element containing choices

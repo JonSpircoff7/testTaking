@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Coding Quiz</title>
-        <link rel="stylesheet" href="./assets/css/reset.css" />
-        <link rel="stylesheet" href="./assets/css/style.css">
-    </head>
-
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Quiz</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <!-- <a> tag that references highscores.html so user could go straight to the scores if they want to -->
+        <a href="./highscores.html" target="">Highscores</a>
+        <!-- span with your timer in it -->
         <div>
-            <!-- <a> tag that references highscores.html so user could go straight to
-            the scores if they want to -->
+          <span>Time remaining: </span>
+          <span class="count"></span>
         </div>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <div id="start-screen" class="start card">
+        <h1>Coding Quiz Challenge</h1>
+        <!-- p tag with a little intro about the quiz -->
+        <p>
+          This is a timed test. If you want to know the time remaining for your
+          test, please refer to the top right corner. When you are ready, press
+          the start button and begin!
+        </p>
+        <!-- start button -->
+        <button id="start-button">Start Test</button>
+      </div>
 
-        <div>
-            <!-- span with your timer in it -->
-        </div>
+      <div id="questions" class="hide">
+        <h2 id="question-title"></h2>
+        <div id="choices" class="choices"></div>
+      </div>
 
-        <div class="wrapper">
-            <div id="start-screen" class="start">
-                <h1>Coding Quiz Challenge</h1>
-                <!-- p tag with a little intro about the quiz -->
+      <div id="end-screen" class="hide">
+        <h2>All done!</h2>
+        <p>Your final score is <span id="final-score"></span>.</p>
+        <p>
+          Enter initials: <input type="text" id="initials" max="3" />
+          <button id="submit">Submit</button>
+        </p>
+      </div>
 
-                <!-- start button -->
-            </div>
-
-            <div id="questions" class="hide">
-                <h2 id="question-title"></h2>
-                <div id="choices" class="choices"></div>
-            </div>
-
-            <div id="end-screen" class="hide">
-                <h2>All done!</h2>
-                <p>Your final score is <span id="final-score"></span>.</p>
-                <p>
-                    Enter initials: <input type="text" id="initials" max="3" />
-                    <button id="submit">Submit</button>
-                </p>
-            </div>
-
-            <div id="feedback" class="feedback hide"></div>
-        </div>
-
-        <script src="./assets/js/questions.js"></script>
-        <script src="./assets/js/logic.js"></script>
-    </body>
+      <div id="feedback" class="feedback hide"></div>
+    </div>
+    <script src="./script/scores.js"></script>
+    <script src="./script/questions.js"></script>
+    <script src="./logic.js"></script>
+  </body>
 </html>
